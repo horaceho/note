@@ -20,7 +20,10 @@ php artisan key:generate
 php artisan migrate
 php artisan serve
 ```
-
+## Notes
+```bash
+open http://127.0.0.1:8000/notes
+```
 ## License
 
 Under the [MIT license](https://opensource.org/licenses/MIT).

@@ -11,6 +11,7 @@ class Note extends Model
 
     protected $fillable = [
         'body',
+        'count',
     ];
 
     public function notable()

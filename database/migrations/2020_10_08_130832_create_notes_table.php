@@ -17,6 +17,7 @@ class CreateNotesTable extends Migration
             $table->id()->startingValue(1_000_001);
             $table->nullableMorphs('notable');
             $table->string('body')->nullable();
+            $table->integer('count')->default(0);
             $table->timestamps();
         });
     }
