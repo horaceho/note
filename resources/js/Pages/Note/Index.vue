@@ -1,6 +1,7 @@
 <template>
   <div>
     <h1 class="text-3xl">{{ user.name }}</h1>
+    <inertia-link href="/notes?count=1000001">Click me</inertia-link>
     <ul>
       <li v-for="note in notes.data" :key="note.id">
         {{ note.id }} - {{ note.body }} [{{ note.count }}]

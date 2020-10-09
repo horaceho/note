@@ -3482,6 +3482,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     user: Object,
@@ -26579,56 +26580,64 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("h1", { staticClass: "text-3xl" }, [_vm._v(_vm._s(_vm.user.name))]),
-    _vm._v(" "),
-    _c(
-      "ul",
-      _vm._l(_vm.notes.data, function(note) {
-        return _c("li", { key: note.id }, [
+  return _c(
+    "div",
+    [
+      _c("h1", { staticClass: "text-3xl" }, [_vm._v(_vm._s(_vm.user.name))]),
+      _vm._v(" "),
+      _c("inertia-link", { attrs: { href: "/notes?count=1000001" } }, [
+        _vm._v("Click me")
+      ]),
+      _vm._v(" "),
+      _c(
+        "ul",
+        _vm._l(_vm.notes.data, function(note) {
+          return _c("li", { key: note.id }, [
+            _vm._v(
+              "\n      " +
+                _vm._s(note.id) +
+                " - " +
+                _vm._s(note.body) +
+                " [" +
+                _vm._s(note.count) +
+                "]\n    "
+            )
+          ])
+        }),
+        0
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        [
           _vm._v(
-            "\n      " +
-              _vm._s(note.id) +
-              " - " +
-              _vm._s(note.body) +
-              " [" +
-              _vm._s(note.count) +
-              "]\n    "
-          )
-        ])
-      }),
-      0
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      [
-        _vm._v(
-          "\n    Page: " +
-            _vm._s(_vm.notes.current_page) +
-            "/" +
-            _vm._s(_vm.notes.last_page) +
-            "\n    |\n    Total: " +
-            _vm._s(_vm.notes.total) +
-            "\n    |\n    "
-        ),
-        _vm._l(_vm.notes.links, function(link) {
-          return _c(
-            "span",
-            { key: link.url },
-            [
-              _c("inertia-link", { attrs: { href: link.url } }, [
-                _vm._v(_vm._s(link.label))
-              ]),
-              _vm._v(" |\n    ")
-            ],
-            1
-          )
-        })
-      ],
-      2
-    )
-  ])
+            "\n    Page: " +
+              _vm._s(_vm.notes.current_page) +
+              "/" +
+              _vm._s(_vm.notes.last_page) +
+              "\n    |\n    Total: " +
+              _vm._s(_vm.notes.total) +
+              "\n    |\n    "
+          ),
+          _vm._l(_vm.notes.links, function(link) {
+            return _c(
+              "span",
+              { key: link.url },
+              [
+                _c("inertia-link", { attrs: { href: link.url } }, [
+                  _vm._v(_vm._s(link.label))
+                ]),
+                _vm._v(" |\n    ")
+              ],
+              1
+            )
+          })
+        ],
+        2
+      )
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
