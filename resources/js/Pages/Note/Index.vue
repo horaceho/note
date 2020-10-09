@@ -3,7 +3,7 @@
     <h1 class="text-3xl">{{ user.name }}</h1>
     <ul>
       <li v-for="note in notes.data" :key="note.id">
-        <inertia-link href="/count?id=1000001">Click me</inertia-link> {{ note.id }} - {{ note.body }} [{{ note.count }}]
+        <inertia-link :href="'/count/?id=' + note.id">Click me</inertia-link> {{ note.id }} - {{ note.body }} [{{ note.count }}]
       </li>
     </ul>
     <div>
