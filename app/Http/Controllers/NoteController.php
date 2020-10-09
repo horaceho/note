@@ -12,15 +12,21 @@ class NoteController extends Controller
 {
     public function index(Request $request)
     {
-        if ($request->count) {
-            $note = Note::where([
-                'id' => $request->count,
-            ])->first();
+        return Inertia::render('Note/Index', [
+            'user' => request()->user(),
+            'notes' => request()->user()->notes()->paginate(),
+        ]);
+    }
 
-            optional($note)->update([
-                'count' => $note->count + 1,
-            ]);
-        }
+    public function count(Request $request)
+    {
+        $note = Note::where([
+            'id' => $request->id,
+        ])->firstOrFail();
+
+        $note->update([
+            'count' => $note->count + 1,
+        ]);
 
         return Inertia::render('Note/Index', [
             'user' => request()->user(),

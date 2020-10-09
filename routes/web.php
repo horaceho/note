@@ -23,3 +23,4 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('notes', [NoteController::class, 'index'])->name('notes');
+Route::middleware(['auth:sanctum', 'verified'])->get('count', [NoteController::class, 'count'])->name('count');
