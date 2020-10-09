@@ -2,10 +2,19 @@
   <div>
     <h1 class="text-3xl">{{ user.name }}</h1>
     <ul>
-      <li v-for="note in notes" :key="note.id">
+      <li v-for="note in notes.data" :key="note.id">
         {{ note.id }} - {{ note.body }} [{{ note.count }}]
       </li>
     </ul>
+    <div>
+      Page: {{ notes.current_page }}/{{ notes.last_page }}
+      |
+      Total: {{ notes.total }}
+      |
+      <span v-for="link in notes.links" :key="link.url">
+        <inertia-link :href=link.url>{{ link.label }}</inertia-link> |
+      </span>
+    </div>
   </div>
 </template>
 

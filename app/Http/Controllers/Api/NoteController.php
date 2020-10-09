@@ -8,6 +8,13 @@ use Illuminate\Http\Request;
 
 class NoteController extends ApiController
 {
+    public function list()
+    {
+        $note = request()->user()->notes()->paginate();
+
+        return $note;
+    }
+
     public function inspire()
     {
         $note = request()->user()->notes()->create([

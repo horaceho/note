@@ -13,7 +13,7 @@ class NoteController extends Controller
     {
         return Inertia::render('Note/Index', [
             'user' => request()->user(),
-            'notes' => request()->user()->notes()->get(),
+            'notes' => request()->user()->notes()->paginate(),
         ]);
     }
 }

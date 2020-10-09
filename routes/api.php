@@ -24,6 +24,7 @@ Route::group([
     'namespace' => 'Api',
     'prefix' => 'notes',
 ], function ($router) {
+    Route::get('list', [NoteController::class, 'list'])->name('notes.list');
     Route::get('inspire', [NoteController::class, 'inspire'])->name('notes.inspire');
     Route::get('count', [NoteController::class, 'count'])->name('notes.count');
 });
