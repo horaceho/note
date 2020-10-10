@@ -5330,6 +5330,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     user: Object,
@@ -29073,7 +29077,8 @@ var render = function() {
                     "/count/?id=" + note.id + "&page=" + _vm.notes.current_page
                 }
               },
-              [_vm._v(" [+] ")]
+              [_c("v-btn", { attrs: { "x-small": "" } }, [_vm._v("[+]")])],
+              1
             ),
             _vm._v(" "),
             _c(
@@ -29085,7 +29090,8 @@ var render = function() {
                   data: { id: note.id, page: _vm.notes.current_page }
                 }
               },
-              [_vm._v(" [...] ")]
+              [_c("v-btn", { attrs: { "x-small": "" } }, [_vm._v("[...]")])],
+              1
             ),
             _vm._v(
               "\n      " +

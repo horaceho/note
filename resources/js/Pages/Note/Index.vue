@@ -5,8 +5,12 @@
     <ul>
       <li v-for="note in notes.data" :key="note.id" class="pb-2 mb-2">
         {{ note.id }}
-        <inertia-link :href="'/count/?id=' + note.id + '&page=' + notes.current_page" > [+] </inertia-link>
-        <inertia-link href="/comment" method="post" :data="{ id: note.id, page: notes.current_page }" > [...] </inertia-link>
+        <inertia-link :href="'/count/?id=' + note.id + '&page=' + notes.current_page">
+            <v-btn x-small>[+]</v-btn>
+        </inertia-link>
+        <inertia-link href="/comment" method="post" :data="{ id: note.id, page: notes.current_page }">
+            <v-btn x-small>[...]</v-btn>
+        </inertia-link>
         {{ note.body }}
         [{{ note.count }}]
         <p v-for="comment in note.comments" :key="comment.id" class="ml-8 italic">
