@@ -10,7 +10,7 @@ class NoteController extends ApiController
 {
     public function list()
     {
-        $note = request()->user()->notes()->paginate();
+        $note = request()->user()->notes()->with('comments')->paginate();
 
         return $note;
     }

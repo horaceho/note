@@ -3482,6 +3482,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     user: Object,
@@ -26589,7 +26596,7 @@ var render = function() {
           "li",
           { key: note.id },
           [
-            _vm._v("\n       " + _vm._s(note.id) + " "),
+            _vm._v("\n      " + _vm._s(note.id) + "\n      "),
             _c(
               "inertia-link",
               {
@@ -26600,11 +26607,32 @@ var render = function() {
               },
               [_vm._v(" [+] ")]
             ),
+            _vm._v(" "),
+            _c(
+              "inertia-link",
+              {
+                attrs: {
+                  href: "/comment",
+                  method: "post",
+                  data: { id: note.id }
+                }
+              },
+              [_vm._v(" [...] ")]
+            ),
             _vm._v(
-              " " + _vm._s(note.body) + " [" + _vm._s(note.count) + "]\n    "
-            )
+              "\n      " +
+                _vm._s(note.body) +
+                "\n      [" +
+                _vm._s(note.count) +
+                "]\n      "
+            ),
+            _vm._l(note.comments, function(comment) {
+              return _c("p", { key: comment.id, staticClass: "ml-8 italic" }, [
+                _vm._v("\n        " + _vm._s(comment.body) + "\n      ")
+              ])
+            })
           ],
-          1
+          2
         )
       }),
       0

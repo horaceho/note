@@ -18,4 +18,9 @@ class Note extends Model
     {
         return $this->morphTo();
     }
+
+    public function comments()
+    {
+        return $this->morphMany(Note::class, 'notable');
+    }
 }
