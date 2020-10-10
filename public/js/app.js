@@ -26614,7 +26614,7 @@ var render = function() {
                 attrs: {
                   href: "/comment",
                   method: "post",
-                  data: { id: note.id }
+                  data: { id: note.id, page: _vm.notes.current_page }
                 }
               },
               [_vm._v(" [...] ")]
