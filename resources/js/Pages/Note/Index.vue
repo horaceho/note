@@ -1,9 +1,9 @@
 <template>
-  <div>
-    <h1 class="text-3xl">{{ user.name }} <inertia-link :href="'/inspire/?' + 'page=' + notes.current_page" > [i] </inertia-link></h1>
+  <div class="p-4">
+    <h1 class="text-3xl mb-8">{{ user.name }} <inertia-link :href="'/inspire/?' + 'page=' + notes.current_page" > [i] </inertia-link></h1>
 
     <ul>
-      <li v-for="note in notes.data" :key="note.id">
+      <li v-for="note in notes.data" :key="note.id" class="pb-2 mb-2">
         {{ note.id }}
         <inertia-link :href="'/count/?id=' + note.id + '&page=' + notes.current_page" > [+] </inertia-link>
         <inertia-link href="/comment" method="post" :data="{ id: note.id, page: notes.current_page }" > [...] </inertia-link>
