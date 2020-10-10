@@ -3489,6 +3489,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     user: Object,
@@ -26587,7 +26588,19 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("h1", { staticClass: "text-3xl" }, [_vm._v(_vm._s(_vm.user.name))]),
+    _c(
+      "h1",
+      { staticClass: "text-3xl" },
+      [
+        _vm._v(_vm._s(_vm.user.name) + " "),
+        _c(
+          "inertia-link",
+          { attrs: { href: "/inspire/?" + "page=" + _vm.notes.current_page } },
+          [_vm._v(" [i] ")]
+        )
+      ],
+      1
+    ),
     _vm._v(" "),
     _c(
       "ul",

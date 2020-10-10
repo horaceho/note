@@ -19,6 +19,17 @@ class NoteController extends Controller
         ]);
     }
 
+    public function inspire(Request $request)
+    {
+        $note = request()->user()->notes()->create([
+            'body' => Inspiring::quote(),
+        ]);
+
+        return Redirect::route('notes', [
+            'page' => $request->page,
+        ]);
+    }
+
     public function count(Request $request)
     {
         $note = Note::where([

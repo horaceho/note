@@ -1,6 +1,7 @@
 <template>
   <div>
-    <h1 class="text-3xl">{{ user.name }}</h1>
+    <h1 class="text-3xl">{{ user.name }} <inertia-link :href="'/inspire/?' + 'page=' + notes.current_page" > [i] </inertia-link></h1>
+
     <ul>
       <li v-for="note in notes.data" :key="note.id">
         {{ note.id }}
