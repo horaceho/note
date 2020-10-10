@@ -28,6 +28,8 @@ class NoteController extends Controller
             'count' => $note->count + 1,
         ]);
 
-        return Redirect::route('notes');
+        return Redirect::route('notes', [
+            'page' => $request->page,
+        ]);
     }
 }

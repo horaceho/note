@@ -26589,19 +26589,19 @@ var render = function() {
           "li",
           { key: note.id },
           [
+            _vm._v("\n       " + _vm._s(note.id) + " "),
             _c(
               "inertia-link",
-              { attrs: { href: _vm.route("count") + "?id=" + note.id } },
-              [_vm._v("Click me")]
+              {
+                attrs: {
+                  href:
+                    "/count/?id=" + note.id + "&page=" + _vm.notes.current_page
+                }
+              },
+              [_vm._v(" [+] ")]
             ),
             _vm._v(
-              " " +
-                _vm._s(note.id) +
-                " - " +
-                _vm._s(note.body) +
-                " [" +
-                _vm._s(note.count) +
-                "]\n    "
+              " " + _vm._s(note.body) + " [" + _vm._s(note.count) + "]\n    "
             )
           ],
           1
