@@ -28,9 +28,6 @@ class NoteController extends Controller
             'count' => $note->count + 1,
         ]);
 
-        return Inertia::render('Note/Index', [
-            'user' => request()->user(),
-            'notes' => request()->user()->notes()->paginate(),
-        ]);
+        return Redirect::route('notes');
     }
 }
