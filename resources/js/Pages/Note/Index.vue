@@ -19,8 +19,8 @@
       |
       Total: {{ notes.total }}
       |
-      <span v-for="link in notes.links" :key="link.url">
-        <inertia-link :href=link.url>{{ link.label }}</inertia-link> |
+      <span v-for="(link, index) in notes.links" :key="index">
+        <inertia-link :href="link.url || ''">{{ link.label }}</inertia-link> |
       </span>
     </div>
   </div>

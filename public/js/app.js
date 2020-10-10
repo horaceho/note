@@ -28503,12 +28503,12 @@ var render = function() {
             _vm._s(_vm.notes.total) +
             "\n    |\n    "
         ),
-        _vm._l(_vm.notes.links, function(link) {
+        _vm._l(_vm.notes.links, function(link, index) {
           return _c(
             "span",
-            { key: link.url },
+            { key: index },
             [
-              _c("inertia-link", { attrs: { href: link.url } }, [
+              _c("inertia-link", { attrs: { href: link.url || "" } }, [
                 _vm._v(_vm._s(link.label))
               ]),
               _vm._v(" |\n    ")
