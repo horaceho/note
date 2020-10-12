@@ -14,7 +14,9 @@
                 <div class="pr-2">
                   <span class="text-gray-500">{{ note.id }}.</span>
                   <span class="text-xs">
-                    [<inertia-link :href="'/count/?id=' + note.id + '&page=' + notes.current_page">+</inertia-link>]
+                    [<inertia-link :href="'/count/?id=' + note.id + '&page=' + notes.current_page">
+                      <v-icon x-small>mdi-plus</v-icon>
+                    </inertia-link>]
                   </span>
                   <span class="text-xs cursor-pointer" @click="open(note)">[...]</span>
                 </div>
