@@ -13,7 +13,7 @@ class NoteController extends Controller
 {
     public function index(Request $request)
     {
-        return Inertia::render('Note/Index', [
+        return Inertia::render('Note/IndexVuetify', [
             'user' => request()->user(),
             'notes' => request()->user()->notes()->with('comments')->paginate(),
         ]);
