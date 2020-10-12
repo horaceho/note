@@ -5429,6 +5429,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     user: Object,
@@ -29411,6 +29421,38 @@ var render = function() {
                     )
                   }),
                   0
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "mt-4 text-cool-gray-800 text-sm" },
+                  [
+                    _vm._v(
+                      "\n          Page: " +
+                        _vm._s(_vm.notes.current_page) +
+                        "/" +
+                        _vm._s(_vm.notes.last_page) +
+                        "\n          |\n          Total: " +
+                        _vm._s(_vm.notes.total) +
+                        "\n          |\n          "
+                    ),
+                    _vm._l(_vm.notes.links, function(link, index) {
+                      return _c(
+                        "span",
+                        { key: index },
+                        [
+                          _c(
+                            "inertia-link",
+                            { attrs: { href: link.url || "" } },
+                            [_vm._v(_vm._s(link.label))]
+                          ),
+                          _vm._v(" |\n          ")
+                        ],
+                        1
+                      )
+                    })
+                  ],
+                  2
                 )
               ]),
               _vm._v(" "),

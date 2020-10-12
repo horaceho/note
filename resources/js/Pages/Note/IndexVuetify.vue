@@ -32,6 +32,16 @@
               </div>
             </li>
           </ul>
+
+          <div class="mt-4 text-cool-gray-800 text-sm">
+            Page: {{ notes.current_page }}/{{ notes.last_page }}
+            |
+            Total: {{ notes.total }}
+            |
+            <span v-for="(link, index) in notes.links" :key="index">
+              <inertia-link :href="link.url || ''">{{ link.label }}</inertia-link> |
+            </span>
+          </div>
         </div>
 
         <v-dialog v-model="showDialog" width="680">
